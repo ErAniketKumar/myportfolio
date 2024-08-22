@@ -152,7 +152,7 @@ function Contact() {
 						</form>
 					</div>
 				</div>
-
+						{/* footer */}
 				<div className="flex flex-col items-center mt-5">
 					<p>©2024 Aniket. All rights reserved</p>
 					<p className="flex space-x-2">

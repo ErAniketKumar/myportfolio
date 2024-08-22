@@ -13,32 +13,32 @@ function Navbar() {
 		{
 			id: 1,
 			text: "Home",
-			// route:"/",
+			
 		},
 		{
 			id: 2,
 			text: "About",
-			// route:"/about",
+			
 		},
 		{
 			id: 3,
 			text: "Portfolio",
-			// route:"/portfolio",
+			
 		},
 		{
 			id: 4,
 			text: "Explore",
-			// route:"/explore",
+		
 		},
 		{
 			id: 5,
 			text: "Contact",
-			// route:"/contact",
+			
 		},
 	];
 	return (
 		<>
-			<div className="max-w-screen-2xl container mx-auto px-4 md:px-20 ">
+			<div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
 				<div className="shadow-md flex justify-between items-center px-5 fixed top-0 left-0 right-0 bg-white">
 					<div className="logo flex items-center gap-2">
 						<div className="text-3xl">
@@ -59,6 +59,7 @@ function Navbar() {
 								key={id}
 							>
 								<Link
+									className="hover:text-blue-700"
 									to={text}
 									smooth={true}
 									duration={500}
@@ -85,6 +86,7 @@ function Navbar() {
 								key={id}
 							>
 								<Link
+									className="hover:text-blue-700"
 									to={text}
 									onClick={() => setMenu(!menu)}
 									smooth={true}

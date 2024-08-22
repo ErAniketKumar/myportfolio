@@ -5,7 +5,7 @@ function Portfolio() {
   const cardArray = [
     {
       id:1,
-      imgUrl:"/image/mongodb.jpg",
+      imgUrl:"/image/todo_img.png",
       title:"mongoDb",
       paragraph:"Lorem ipsum dolor sit amet fhdjwebfijsn",
       btn1:"Video",
