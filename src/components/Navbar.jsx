@@ -38,6 +38,19 @@ function Navbar() {
 			
 		},
 	];
+
+	const toggleNav = () => {
+		setMenu(prev => {
+			if (prev) {
+				enableScroll();
+				return false;
+			} else {
+				disableScroll();
+				return true;
+			}
+		});
+	}
+
 	return (
 		<>
 			<div className="relative z-[30] max-w-screen-2xl container mx-auto px-4 md:px-20">
@@ -75,15 +88,7 @@ function Navbar() {
 					</div>
 
 					<div className="md:hidden text-3xl" onClick={() => {
-						setMenu(prev => {
-							if (prev) {
-								enableScroll();
-								return false;
-							} else {
-								disableScroll();
-								return true;
-							}
-						});
+						toggleNav();
 					}}>
 						{menu ? <RxCross1 /> : <FaBars />}
 					</div>
@@ -100,7 +105,7 @@ function Navbar() {
 								<Link
 									className="hover:text-blue-700"
 									to={text}
-									onClick={() => setMenu(!menu)}
+									onClick={() => toggleNav()}
 									smooth={true}
 									duration={500}
 									offset={-70}

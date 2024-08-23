@@ -44,11 +44,13 @@ function Card({ imgUrl, title, paragraph, live, src }) {
 				variants={variants.overlay}
 				initial={"initial"}
 				whileHover={"animate"}
+				whileFocus={"animate"}
 			>
 				<motion.div
 					className="flex justify-center items-center h-full text-white flex-col"
 					variants={variants.elements}
 					whileHover={"animate"}
+					whileFocus={"animate"}
 					initial={"initial"}
 				>
 					<motion.h1  variants={variants.elements}
