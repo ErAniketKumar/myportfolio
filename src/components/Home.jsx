@@ -64,11 +64,12 @@ function Home() {
 			>
 				<div className="flex flex-col md:flex-row ">
 					<div className="md:w-1/2 mt-10 md:mt-12 space-y-2 order-2 md:order-1 ">
-						<span className="text-xl justify-center flex md:justify-start font-semibold text-green-600">
-							--Hello
+						<span className="text-[1.3rem] justify-center flex items-center gap-1 md:justify-start font-medium text-green-600
+						before:content-[''] before:w-6 before:h-[1px] before:bg-green-600">
+							Hello
 						</span>
 						<div className="flex space-x-1 text-2xl md:text-4xl justify-center md:justify-start">
-							<h1>i'm a</h1>
+							<h1>I'm a</h1>
 							{/* <span className="text-red-700 font-bold">Developer|</span> */}
 							<ReactTyped
 								className="text-red-700 font-bold"
