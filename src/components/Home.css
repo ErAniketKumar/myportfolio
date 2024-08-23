@@ -1,5 +1,5 @@
 .imgBox {
-    background-image: url('./image/aniket_pic.jpg');
+    background-image: url('/image/aniket_pic.jpg');
     height:380px;
     width: 380px;
     /* display: flex; */

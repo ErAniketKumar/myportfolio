@@ -6,6 +6,8 @@ import { RxCross1 } from "react-icons/rx";
 
 import { Link } from "react-scroll";
 
+import {disableScroll, enableScroll} from "../utils/scrollHandler.util.js";
+
 function Navbar() {
 	const [menu, setMenu] = useState(false);
 
@@ -38,7 +40,7 @@ function Navbar() {
 	];
 	return (
 		<>
-			<div className="max-w-screen-2xl container mx-auto px-4 md:px-20">
+			<div className="relative z-[30] max-w-screen-2xl container mx-auto px-4 md:px-20">
 				<div className="shadow-md flex justify-between items-center px-5 fixed top-0 left-0 right-0 bg-white">
 					<div className="logo flex items-center gap-2">
 						<div className="text-3xl">
@@ -72,14 +74,24 @@ function Navbar() {
 						))}
 					</div>
 
-					<div className="md:hidden text-3xl" onClick={() => setMenu(!menu)}>
+					<div className="md:hidden text-3xl" onClick={() => {
+						setMenu(prev => {
+							if (prev) {
+								enableScroll();
+								return false;
+							} else {
+								disableScroll();
+								return true;
+							}
+						});
+					}}>
 						{menu ? <RxCross1 /> : <FaBars />}
 					</div>
 
 					{/* mobile navbar */}
 				</div>
 				{menu && (
-					<div className="md:hidden flex flex-col h-screen justify-center items-center bg-white space-y-3 text-xl font-semibold">
+					<div className="fixed z-[10] size-full md:hidden flex flex-col h-screen justify-center items-center bg-white space-y-3 text-xl font-semibold">
 						{navItems.map(({ id, text, route }) => (
 							<span
 								className={`hover:scale-105 duration-200 cursor-pointer`}
