@@ -64,11 +64,11 @@ function Home() {
 			>
 				<div className="flex flex-col md:flex-row ">
 					<div className="md:w-1/2 mt-10 md:mt-12 space-y-2 order-2 md:order-1 ">
-						<span className="text-xl justify-center flex md:justify-start font-semibold">
-							Welcome In My Feed
+						<span className="text-xl justify-center flex md:justify-start font-semibold text-green-600">
+							--Hello
 						</span>
 						<div className="flex space-x-1 text-2xl md:text-4xl justify-center md:justify-start">
-							<h1>Hello, i'm a</h1>
+							<h1>i'm a</h1>
 							{/* <span className="text-red-700 font-bold">Developer|</span> */}
 							<ReactTyped
 								className="text-red-700 font-bold"
@@ -81,10 +81,12 @@ function Home() {
 						</div>
 						<br />
 						<p className="text-sm md:text-md text-justify">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis
-							voluptatibus expedita aliquid perferendis maxime et voluptatem
-							impedit nostrum mollitia pariatur illum dolor cupiditate ipsum
-							porro corrupti assumenda dolore voluptatum quod, odit doloribus
+							Hi there! My name is Aniket Kumar, and I'm a 3rd-year computer
+							science student with a passion for coding and technology. I'm
+							currently diving deep into Data Structures and Algorithms, as well
+							as MERN stack development., I share my learning
+							journey, projects, and insights to help others grow in their tech
+							careers.
 						</p>
 						<br />
 

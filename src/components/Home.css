@@ -3,13 +3,14 @@
     height:380px;
     width: 380px;
     /* display: flex; */
-    /* align-self: center; */
+    align-self: center;
     background-size: cover;
     background-position: center center;
     margin: 20px;
     box-shadow: 0 5px 5px 5px rgba(13,110,253, 0.2);
     animation: animate 5s ease-in-out infinite;
     transition: all 0.1s ease-in-out;
+    border-radius: 30%;
 }
 
 @keyframes animate {
