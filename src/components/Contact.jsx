@@ -8,9 +8,11 @@ import {
 	FaLinkedin,
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaSquareXTwitter, FaCode } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { useForm } from "react-hook-form";
+
+
 import axios from "axios";
 import toast from "react-hot-toast";
 function Contact() {
@@ -157,8 +159,8 @@ function Contact() {
 					<p>©2024 Aniket. All rights reserved</p>
 					<p className="flex space-x-2">
 						<span className="text-sm">Web Development</span>
-						<span className="text-red-700">
-							<FaHeart />
+						<span className="text-gray-900">
+							<FaCode/>
 						</span>
 					</p>
 				</div>

@@ -5,7 +5,7 @@ function Portfolio() {
 	const cardArray = [
 		{
 			id: 1,
-			imgUrl: "/image/crudApps.png",
+			imgUrl: "/image/crud.png",
 			title: "Crud (Todo-list)",
 			paragraph: "Lorem ipsum dolor sit amet fhdjwebfijsn",
 			live: "https://crudapps-ygc3.onrender.com/add",
@@ -13,7 +13,7 @@ function Portfolio() {
 		},
 		{
 			id: 2,
-			imgUrl: "/image/LiveChatImg.png",
+			imgUrl: "/image/livechatImg.jpg",
 			title: "Live chat Apps",
 			paragraph: "Lorem ipsum dolor sit amet fhdjwebfijsn",
 			live: "https://lovejivan.onrender.com",
@@ -21,7 +21,7 @@ function Portfolio() {
 		},
 		{
 			id: 3,
-			imgUrl: "/image/qrCodeImg.png",
+			imgUrl: "/image/qrcodeImg.png",
 			title: "Qr code generator",
 			paragraph: "Lorem ipsum dolor sit amet fhdjwebfijsn",
 			live: "https://makeqreasy.onrender.com/",
@@ -29,7 +29,7 @@ function Portfolio() {
 		},
 		{
 			id: 4,
-			imgUrl: "/image/node.png",
+			imgUrl: "/image/randomColor.png",
 			title: "Random Color Gen.",
 			paragraph: "Lorem ipsum dolor sit amet fhdjwebfijsn",
 			live: "Video",
@@ -37,7 +37,7 @@ function Portfolio() {
 		},
 		{
 			id: 5,
-			imgUrl: "/image/calculator.png",
+			imgUrl: "/image/calculatorImg.png",
 			title: "Calculator",
 			paragraph: "Lorem ipsum dolor sit amet fhdjwebfijsn",
 			live: "https://eraniketkumar.github.io/JsBasicCalculator/",
@@ -45,20 +45,28 @@ function Portfolio() {
 		},
 		{
 			id: 6,
-			imgUrl: "/image/python.webp",
-			title: "Hand Despansor",
+			imgUrl: "/image/iotLinerobot.jpg",
+			title: "Line follower",
 			paragraph: "Lorem ipsum dolor sit amet fhdjwebfijsn",
 			live: "Video",
 			src: "Source Code",
 		},
 		{
 			id: 7,
-			imgUrl: "/image/liveTogether.png",
+			imgUrl: "/image/livetogetherLogo.jpg",
 			title: "Livetogether",
 			paragraph: "Lorem ipsum dolor sit amet fhdjwebfijsn",
 			live: "https://livetogether.onrender.com",
 			src: "https://github.com/ErAniketKumar/liveTogetherEduSite/tree/main",
 		},
+		{
+			id: 8,
+			imgUrl: "/image/mernStack.jpeg",
+			title: "MERN Stack App",
+			paragraph: "Lorem ipsum dolor sit amet fhdjwebfijsn",
+			live: "https://mern-crud-api.web.app/",
+			src: "https://github.com/ErAniketKumar/MERN-API-CRUD"
+		}
 	];
 	return (
 		<>

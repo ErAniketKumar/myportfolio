@@ -104,7 +104,7 @@ function Home() {
 								</span>
 							</div>
 							<div className="space-y-2">
-								<h1 className="font-bold">Currently woring on</h1>
+								<h1 className="font-bold">Currently working on</h1>
 								<span className="flex text-2xl space-x-1 md:space-x-2 ml-7 md:ml-0">
 									{workIcon.map(({ id, icon }) => (
 										<span

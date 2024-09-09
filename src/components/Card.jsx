@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { TbExternalLink } from "react-icons/tb";
+import { FaGlobe } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { motion, easeIn, anticipate } from "framer-motion";
-import { NavLink,Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const variants = {
 	overlay: {
@@ -53,16 +53,18 @@ function Card({ imgUrl, title, paragraph, live, src }) {
 					whileFocus={"animate"}
 					initial={"initial"}
 				>
-					<motion.h1  variants={variants.elements}
-					className="text-2xl font-semibold">
+					<motion.h1
+						variants={variants.elements}
+						className="text-2xl font-medium text-white "
+					>
 						{title}
 					</motion.h1>
 					<motion.div variants={variants.elements} className="flex gap-2">
 						<Link to={live} target="_blank">
-							<TbExternalLink className="text-5xl text-indigo-600" />
+							<FaGlobe className="text-4xl text-yellow-500" />
 						</Link>
-						<Link to ={src} target="_blank">
-							<FaGithub className="text-4xl" />
+						<Link to={src} target="_blank">
+							<FaGithub className="text-4xl text-green-500" />
 						</Link>
 					</motion.div>
 				</motion.div>
