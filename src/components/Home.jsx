@@ -24,14 +24,32 @@ function Home() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="flex flex-col md:flex-row items-center gap-12 min-h-screen">
+      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 min-h-screen">
+        {/* Image Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="md:w-1/2 flex justify-center md:order-2"
+        >
+          <div className="relative">
+            <img
+              src="/image/aniket_pic.jpg"
+              alt="Aniket Kumar"
+              className="rounded-full w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover shadow-2xl border-4 border-teal-400/20"
+            />
+            <div className="absolute inset-0 rounded-full bg-teal-400/10 animate-pulse"></div>
+          </div>
+        </motion.div>
+
+        {/* Text Section */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="md:w-1/2 space-y-6"
+          className="md:w-1/2 space-y-6 text-center md:text-left md:order-1"
         >
-          <span className="text-lg font-medium text-teal-400 flex items-center gap-3">
+          <span className="text-lg font-medium text-teal-400 flex items-center justify-center md:justify-start gap-3">
             <span className="h-px w-10 bg-teal-400"></span> Welcome
           </span>
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
@@ -48,10 +66,10 @@ function Home() {
             I'm a full-stack developer specializing in React, Node.js, and MongoDB. I created{' '}
             <span className="font-semibold text-teal-400">KalawatiPutra Edu</span>, a platform for tech and education solutions. Passionate about building scalable, user-friendly applications.
           </p>
-          <div className="flex flex-col sm:flex-row gap-8">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
             <div>
               <h3 className="font-semibold">Connect</h3>
-              <div className="flex gap-4 mt-3">
+              <div className="flex gap-4 mt-3 justify-center md:justify-start">
                 {mediaIcon.map(({ id, url, icon }) => (
                   <NavLink
                     key={id}
@@ -66,7 +84,7 @@ function Home() {
             </div>
             <div>
               <h3 className="font-semibold">Tech Stack</h3>
-              <div className="flex gap-4 mt-3">
+              <div className="flex gap-4 mt-3 justify-center md:justify-start">
                 {workIcon.map(({ id, icon }) => (
                   <span
                     key={id}
@@ -84,21 +102,6 @@ function Home() {
           >
             View My Work
           </a>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="md:w-1/2 flex justify-center"
-        >
-          <div className="relative">
-            <img
-              src="/image/aniket_pic.jpg"
-              alt="Aniket Kumar"
-              className="rounded-full w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover shadow-2xl border-4 border-teal-400/20"
-            />
-            <div className="absolute inset-0 rounded-full bg-teal-400/10 animate-pulse"></div>
-          </div>
         </motion.div>
       </div>
     </div>
