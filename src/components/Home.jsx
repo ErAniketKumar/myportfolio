@@ -1,136 +1,108 @@
-import React from "react";
-import {
-	FaInstagram,
-	FaGithub,
-	FaReact,
-	FaNodeJs,
-	FaLinkedin,
-} from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { DiMongodb } from "react-icons/di";
-import { SiExpress } from "react-icons/si";
-import { Link, NavLink } from "react-router-dom";
-import { ReactTyped, Typed } from "react-typed";
-import "./Home.css";
+import React from 'react';
+import { FaInstagram, FaGithub, FaReact, FaNodeJs, FaLinkedin } from 'react-icons/fa';
+import { FaSquareXTwitter } from 'react-icons/fa6';
+import { DiMongodb } from 'react-icons/di';
+import { SiExpress } from 'react-icons/si';
+import { NavLink } from 'react-router-dom';
+import { ReactTyped } from 'react-typed';
+import { motion } from 'framer-motion';
 
 function Home() {
-	const mediaIcon = [
-		{
-			id: 1,
-			url: "https://github.com/ErAniketKumar",
-			icon: <FaGithub />,
-		},
-		{
-			id: 2,
-			url: "https://linkedin.com/in/eraniket",
-			icon: <FaLinkedin />,
-		},
-		{
-			id: 3,
-			url: "https://instagram.com/eraniket95",
-			icon: <FaInstagram />,
-		},
-		{
-			id: 4,
-			url: "",
-			icon: <FaSquareXTwitter />,
-		},
-	];
+  const mediaIcon = [
+    { id: 1, url: 'https://github.com/ErAniketKumar', icon: <FaGithub /> },
+    { id: 2, url: 'https://linkedin.com/in/eraniket', icon: <FaLinkedin /> },
+    { id: 3, url: 'https://instagram.com/eraniket95', icon: <FaInstagram /> },
+    { id: 4, url: '', icon: <FaSquareXTwitter /> },
+  ];
 
-	const workIcon = [
-		{
-			id: 1,
-			icon: <FaReact />,
-		},
-		{
-			id: 2,
-			icon: <FaNodeJs />,
-		},
-		{
-			id: 3,
-			icon: <SiExpress />,
-		},
-		{
-			id: 4,
-			icon: <DiMongodb />,
-		},
-	];
+  const workIcon = [
+    { id: 1, icon: <FaReact /> },
+    { id: 2, icon: <FaNodeJs /> },
+    { id: 3, icon: <SiExpress /> },
+    { id: 4, icon: <DiMongodb /> },
+  ];
 
-	return (
-		<>
-			<div
-				name="Home"
-				className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-12"
-			>
-				<div className="flex flex-col md:flex-row ">
-					<div className="md:w-1/2 mt-10 md:mt-12 space-y-2 order-2 md:order-1 ">
-						<span className="text-[1.3rem] justify-center flex items-center gap-1 md:justify-start font-medium text-green-600
-						before:content-[''] before:w-6 before:h-[1px] before:bg-green-600">
-							Hello
-						</span>
-						<div className="flex space-x-1 text-2xl md:text-4xl justify-center md:justify-start">
-							<h1>I'm a</h1>
-							{/* <span className="text-red-700 font-bold">Developer|</span> */}
-							<ReactTyped
-								className="text-red-700 font-bold"
-								typedRef={""}
-								strings={["Developer", "Programmer", "Coder"]}
-								typeSpeed={50}
-								backSpeed={50}
-								loop="true"
-							/>
-						</div>
-						<br />
-						<p className="text-sm md:text-md text-justify">
-							Hi there! My name is Aniket Kumar, and I'm a 3rd-year computer
-							science student with a passion for coding and technology. I'm
-							currently diving deep into Data Structures and Algorithms, as well
-							as MERN stack development., I share my learning
-							journey, projects, and insights to help others grow in their tech
-							careers.
-						</p>
-						<br />
-
-						{/* socialmedia icons */}
-						<div className="flex flex-col md:flex-row justify-between space-y-6 md:space-y-0 items-center">
-							<div className="space-y-2">
-								<h1 className="font-bold">Available on</h1>
-								<span className="flex text-2xl md:text-3xl space-x-1 md:space-x-2">
-									{mediaIcon.map(({ id, url, icon }) => (
-										<NavLink key={id} to={url} target="_blank">
-											{icon}
-										</NavLink>
-									))}
-								</span>
-							</div>
-							<div className="space-y-2">
-								<h1 className="font-bold">Currently working on</h1>
-								<span className="flex text-2xl space-x-1 md:space-x-2 ml-7 md:ml-0">
-									{workIcon.map(({ id, icon }) => (
-										<span
-											className="text-xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px]"
-											key={id}
-										>
-											{icon}
-										</span>
-									))}
-								</span>
-							</div>
-						</div>
-					</div>
-
-					<div className="md:w-1/2 md:ml-48 md:mt-12 order-1 mt-6 flex justify-center imgBox">
-						{/* <img
-							src="/image/aniket_pic.jpg"
-							className="rounded-full md:w-[400px] md:h-[400px] aniketImg"
-							alt=""
-						/> */}
-					</div>
-				</div>
-			</div>
-			<hr />
-		</>
-	);
+  return (
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="flex flex-col md:flex-row items-center gap-12 min-h-screen">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="md:w-1/2 space-y-6"
+        >
+          <span className="text-lg font-medium text-teal-400 flex items-center gap-3">
+            <span className="h-px w-10 bg-teal-400"></span> Welcome
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
+            I'm <span className="text-teal-400">Aniket Kumar</span>
+          </h1>
+          <ReactTyped
+            className="text-2xl text-gray-300 light-theme:text-gray-800"
+            strings={['Full-Stack Developer', 'Tech Enthusiast', 'Problem Solver']}
+            typeSpeed={50}
+            backSpeed={50}
+            loop
+          />
+          <p className="text-lg leading-relaxed">
+            I'm a full-stack developer specializing in React, Node.js, and MongoDB. I created{' '}
+            <span className="font-semibold text-teal-400">KalawatiPutra Edu</span>, a platform for tech and education solutions. Passionate about building scalable, user-friendly applications.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-8">
+            <div>
+              <h3 className="font-semibold">Connect</h3>
+              <div className="flex gap-4 mt-3">
+                {mediaIcon.map(({ id, url, icon }) => (
+                  <NavLink
+                    key={id}
+                    to={url}
+                    target="_blank"
+                    className="text-3xl hover:text-teal-400 transition-transform hover:scale-110"
+                  >
+                    {icon}
+                  </NavLink>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold">Tech Stack</h3>
+              <div className="flex gap-4 mt-3">
+                {workIcon.map(({ id, icon }) => (
+                  <span
+                    key={id}
+                    className="text-3xl hover:text-teal-400 transition-transform hover:scale-110"
+                  >
+                    {icon}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <a
+            href="#Portfolio"
+            className="inline-block mt-6 px-6 py-3 bg-teal-400 text-gray-900 rounded-md font-semibold hover:bg-teal-300 transition-colors"
+          >
+            View My Work
+          </a>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="md:w-1/2 flex justify-center"
+        >
+          <div className="relative">
+            <img
+              src="/image/aniket_pic.jpg"
+              alt="Aniket Kumar"
+              className="rounded-full w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover shadow-2xl border-4 border-teal-400/20"
+            />
+            <div className="absolute inset-0 rounded-full bg-teal-400/10 animate-pulse"></div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
 }
 
 export default Home;

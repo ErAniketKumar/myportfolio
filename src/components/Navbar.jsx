@@ -1,125 +1,107 @@
-import React, { useState } from "react";
-import { FaUser } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
-import { RxCross1 } from "react-icons/rx";
+import React, { useState } from 'react';
+import { FaUser, FaBars, FaSun, FaMoon } from 'react-icons/fa';
+import { RxCross1 } from 'react-icons/rx';
+import { Link } from 'react-scroll';
+import { motion } from 'framer-motion';
+import { disableScroll, enableScroll } from '../utils/scrollHandler.util.js';
 
-import { Link } from "react-scroll";
+function Navbar({ theme, toggleTheme }) {
+  const [menu, setMenu] = useState(false);
 
-import {disableScroll, enableScroll} from "../utils/scrollHandler.util.js";
+  const navItems = [
+    { id: 1, text: 'Home' },
+    { id: 2, text: 'About' },
+    { id: 3, text: 'Portfolio' },
+    { id: 4, text: 'Skills' },
+    { id: 5, text: 'ContactUs' },
+  ];
 
-function Navbar() {
-	const [menu, setMenu] = useState(false);
+  const toggleNav = () => {
+    setMenu((prev) => {
+      if (prev) {
+        enableScroll();
+        return false;
+      } else {
+        disableScroll();
+        return true;
+      }
+    });
+  };
 
-	const navItems = [
-		{
-			id: 1,
-			text: "Home",
-			
-		},
-		{
-			id: 2,
-			text: "About",
-			
-		},
-		{
-			id: 3,
-			text: "Portfolio",
-			
-		},
-		{
-			id: 4,
-			text: "Explore",
-		
-		},
-		{
-			id: 5,
-			text: "Contact",
-			
-		},
-	];
+  return (
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-lg shadow-md"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center gap-3">
+            <FaUser className="text-2xl text-teal-400" />
+            <div>
+              <span className="text-lg font-bold">Aniket</span>
+              <span className="block text-sm text-gray-400">Web Developer</span>
+            </div>
+          </div>
 
-	const toggleNav = () => {
-		setMenu(prev => {
-			if (prev) {
-				enableScroll();
-				return false;
-			} else {
-				disableScroll();
-				return true;
-			}
-		});
-	}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map(({ id, text }) => (
+              <Link
+                key={id}
+                to={text}
+                smooth={true}
+                duration={500}
+                offset={-70}
+                className="relative text-gray-300 hover:text-teal-400 transition-colors cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-teal-400 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {text}
+              </Link>
+            ))}
+          </div>
 
-	return (
-		<>
-			<div className="relative z-[30] max-w-screen-2xl container mx-auto px-4 md:px-20">
-				<div className="shadow-md flex justify-between items-center px-5 fixed top-0 left-0 right-0 bg-white">
-					<div className="logo flex items-center gap-2">
-						<div className="text-3xl">
-							<FaUser />
-						</div>
-						<div className="flex flex-col">
-							<span className="text-md font-bold">Aniket</span>
-							<span className="text-sm font-semibold">Web developer</span>
-						</div>
-					</div>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+            >
+              {theme === 'dark' ? (
+                <FaSun className="text-2xl text-yellow-400" />
+              ) : (
+                <FaMoon className="text-2xl text-gray-600" />
+              )}
+            </button>
+            <div className="md:hidden text-2xl cursor-pointer" onClick={toggleNav}>
+              {menu ? <RxCross1 /> : <FaBars />}
+            </div>
+          </div>
+        </div>
+      </div>
 
-					{/* desktop navbar */}
-
-					<div className="justify-between lg:w-[40%] md:w-[50%] hidden md:flex">
-						{navItems.map(({ id, text, route }) => (
-							<span
-								className={`hover:scale-105 duration-200 cursor-pointer`}
-								key={id}
-							>
-								<Link
-									className="hover:text-blue-700"
-									to={text}
-									smooth={true}
-									duration={500}
-									offset={-70}
-									activeClass="active"
-								>
-									{text}
-								</Link>
-							</span>
-						))}
-					</div>
-
-					<div className="md:hidden text-3xl" onClick={() => {
-						toggleNav();
-					}}>
-						{menu ? <RxCross1 /> : <FaBars />}
-					</div>
-
-					{/* mobile navbar */}
-				</div>
-				{menu && (
-					<div className="fixed z-[10] size-full md:hidden flex flex-col h-screen justify-center items-center bg-white space-y-3 text-xl font-semibold">
-						{navItems.map(({ id, text, route }) => (
-							<span
-								className={`hover:scale-105 duration-200 cursor-pointer`}
-								key={id}
-							>
-								<Link
-									className="hover:text-blue-700"
-									to={text}
-									onClick={() => toggleNav()}
-									smooth={true}
-									duration={500}
-									offset={-70}
-									activeClass="active"
-								>
-									{text}
-								</Link>
-							</span>
-						))}
-					</div>
-				)}
-			</div>
-		</>
-	);
+      {menu && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden bg-gray-900/95 flex flex-col items-center justify-center h-screen space-y-8 text-xl font-semibold"
+        >
+          {navItems.map(({ id, text }) => (
+            <Link
+              key={id}
+              to={text}
+              smooth={true}
+              duration={500}
+              offset={-70}
+              onClick={toggleNav}
+              className="text-gray-300 hover:text-teal-400 transition-colors"
+            >
+              {text}
+            </Link>
+          ))}
+        </motion.div>
+      )}
+    </motion.nav>
+  );
 }
 
 export default Navbar;
