@@ -1,63 +1,53 @@
 import React from 'react';
-import { FaGlobe, FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-
-const variants = {
-  overlay: {
-    initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 0.3 } },
-  },
-  elements: {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0, transition: { duration: 0.3, staggerChildren: 0.1 } },
-  },
-};
+import { FaGlobe, FaGithub } from 'react-icons/fa';
 
 function Card({ imgUrl, title, paragraph, live, src }) {
   return (
     <motion.div
-      className="relative rounded-xl overflow-hidden shadow-xl bg-gray-800/50"
-      whileHover={{ scale: 1.05, y: -10 }}
+      className="bg-gray-800/30 light-theme:bg-white/80 rounded-xl shadow-lg border border-teal-400/20 light-theme:border-gray-200 overflow-hidden"
+      whileHover={{ scale: 1.03, boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)' }}
+      whileTap={{ scale: 0.98 }} // Subtle feedback on tap
       transition={{ duration: 0.3 }}
     >
-      <img className="w-full h-48 object-cover" src={imgUrl} alt={title} />
+      {/* Image with Hover/Tap Effects */}
       <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"
-        variants={variants.overlay}
-        initial="initial"
-        whileHover="animate"
+        className="relative"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 1.02 }}
+        transition={{ duration: 0.2 }}
       >
-        <motion.div
-          className="flex flex-col justify-end h-full text-white p-4"
-          variants={variants.elements}
-          initial="initial"
-          whileHover="animate"
-        >
-          <motion.h1 variants={variants.elements} className="text-xl font-semibold">
-            {title}
-          </motion.h1>
-          <motion.p variants={variants.elements} className="text-sm text-gray-300">
-            {paragraph}
-          </motion.p>
-          <motion.div variants={variants.elements} className="flex gap-4 mt-3">
-            <Link
-              to={live}
-              target="_blank"
-              className="text-2xl text-yellow-400 hover:text-yellow-300 transition-colors"
-            >
-              <FaGlobe />
-            </Link>
-            <Link
-              to={src}
-              target="_blank"
-              className="text-2xl text-green-400 hover:text-green-300 transition-colors"
-            >
-              <FaGithub />
-            </Link>
-          </motion.div>
-        </motion.div>
+        <img
+          src={imgUrl}
+          alt={title}
+          className="w-full h-48 object-cover"
+        />
+        <div className="absolute inset-0 bg-teal-400/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
       </motion.div>
+
+      {/* Content */}
+      <div className="p-6 space-y-4">
+        <h3 className="text-xl font-semibold text-teal-400">{title}</h3>
+        <p className="text-gray-300 light-theme:text-gray-800">{paragraph}</p>
+        <div className="flex gap-4">
+          <a
+            href={live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 bg-teal-400 text-gray-900 rounded-md font-semibold hover:bg-teal-300 transition-colors"
+          >
+            <FaGlobe /> {live === 'Video' ? 'Watch Video' : 'Live Demo'}
+          </a>
+          <a
+            href={src}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 border border-teal-400 text-teal-400 rounded-md hover:bg-teal-400/10 transition-colors"
+          >
+            <FaGithub /> {src === 'Source Code' ? 'Source' : 'GitHub'}
+          </a>
+        </div>
+      </div>
     </motion.div>
   );
 }
