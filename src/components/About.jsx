@@ -37,7 +37,7 @@ function About() {
             <h2 className="text-2xl font-semibold text-teal-400 mb-4">Aniket Kumar</h2>
             <p className="text-lg leading-relaxed">
               I'm <span className="font-semibold text-teal-400">Aniket Kumar</span>, a full-stack developer passionate about building dynamic web applications with HTML, CSS, JavaScript, React, and Node.js. I founded{' '}
-              <span className="font-semibold text-teal-400">KalawatiPutra Edu</span>, a platform to empower startups and learners through tech and education. My focus is on creating scalable, user-centric solutions.
+              <span className="font-semibold text-teal-400">KalawatiPutra Edu</span>, KalawatiPutra Edu a platform to empower startups and learners through tech and education. My focus is on creating scalable, user-centric solutions.
             </p>
           </motion.div>
 
@@ -51,7 +51,7 @@ function About() {
             <ul className="space-y-4">
               <li>
                 <strong>B.E. in Computer Science</strong>
-                <p>Chitkara University, HP | 3rd Year | CGPA: 9.57/10</p>
+                <p>Chitkara University, HP | 3rd Year | CGPA: 9.44/10</p>
               </li>
               <li>
                 <strong>Higher Secondary (12th Grade)</strong>
@@ -105,7 +105,7 @@ function About() {
               </p>
               <p className="flex items-center gap-2">
                 <FaEnvelope className="text-teal-400" />
-                aniketshraff@gmail.com
+                ceo@kalawatiputra.com
               </p>
             </div>
           </motion.div>

@@ -11,8 +11,8 @@ function Home() {
   const mediaIcon = [
     { id: 1, url: 'https://github.com/ErAniketKumar', icon: <FaGithub /> },
     { id: 2, url: 'https://linkedin.com/in/eraniket', icon: <FaLinkedin /> },
-    { id: 3, url: 'https://instagram.com/eraniket95', icon: <FaInstagram /> },
-    { id: 4, url: '', icon: <FaSquareXTwitter /> },
+    { id: 3, url: 'https://www.instagram.com/eraniketshroff/', icon: <FaInstagram /> },
+    { id: 4, url: 'https://x.com/eraniket95/', icon: <FaSquareXTwitter /> },
   ];
 
   const workIcon = [
@@ -57,13 +57,13 @@ function Home() {
           </h1>
           <ReactTyped
             className="text-2xl text-gray-300 light-theme:text-gray-800"
-            strings={['Full-Stack Developer', 'Tech Enthusiast', 'Problem Solver']}
+            strings={['Founder of KalawatiPutra Edu','Full-Stack Developer', 'Tech Enthusiast', 'Problem Solver']}
             typeSpeed={50}
             backSpeed={50}
             loop
           />
           <p className="text-lg leading-relaxed">
-            I'm a full-stack developer specializing in React, Node.js, and MongoDB. I created{' '}
+            I'm a full-stack developer specializing in React, Node.js, and MongoDB. I founded{' '}
             <span className="font-semibold text-teal-400">KalawatiPutra Edu</span>, a platform for tech and education solutions. Passionate about building scalable, user-friendly applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center md:justify-start">
