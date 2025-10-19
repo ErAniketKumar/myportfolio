@@ -67,8 +67,8 @@ const ProjectDetail = () => {
         "Order tracking and management",
         "Admin dashboard for inventory control",
       ],
-      liveUrl: "https://abhushankala.com",
-      githubUrl: "https://github.com/ErAniketKumar/abhushan-kala",
+      liveUrl: "https://abhushankala.vercel.app",
+      githubUrl: "https://github.com/ErAniketKumar/Abhushan-kala-kendra",
     },
     {
       id: 2,
@@ -101,8 +101,8 @@ const ProjectDetail = () => {
         "Discussion forums and peer collaboration",
         "Certificate generation and management",
       ],
-      liveUrl: "https://kalawatiputra.edu",
-      githubUrl: "https://github.com/ErAniketKumar/kp-edu",
+      liveUrl: "https://kalawatiputra.com",
+      githubUrl: "https://github.com/ErAniketKumar/kalawatiputraEdu",
     },
     {
       id: 3,
@@ -135,8 +135,8 @@ const ProjectDetail = () => {
         "Customizable learning paths",
         "Integration with popular LTI tools",
       ],
-      liveUrl: "https://lrms.kalawatiputra.edu",
-      githubUrl: "https://github.com/ErAniketKumar/kp-lrms",
+      liveUrl: "https://kp-ani-lrms.vercel.app/",
+      githubUrl: "https://github.com/ErAniketKumar/KP-LRMS",
     },
     {
       id: 4,
@@ -169,8 +169,8 @@ const ProjectDetail = () => {
         "Location-based search and filtering",
         "User verification and rating system",
       ],
-      liveUrl: "https://lostandfound-aniket.vercel.app",
-      githubUrl: "https://github.com/ErAniketKumar/lost-and-found",
+      liveUrl: "https://lost-n-found-web.vercel.app/",
+      githubUrl: "https://github.com/ErAniketKumar/Lost_n_Found_web",
     },
     {
       id: 5,
@@ -203,8 +203,8 @@ const ProjectDetail = () => {
         "News and press release section",
         "Responsive design for all devices",
       ],
-      liveUrl: "https://politician-portfolio.vercel.app",
-      githubUrl: "https://github.com/ErAniketKumar/politician-portfolio",
+      liveUrl: "https://abhisheksarraf.in",
+      githubUrl: "https://github.com/ErAniketKumar/Abhishek-portfolio",
     },
   ];
 
