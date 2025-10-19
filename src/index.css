@@ -1,30 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   @apply bg-gray-900 text-white transition-colors duration-300;
 }
 
 .light-theme {
-  @apply bg-gray-50 text-gray-900;
+  @apply bg-white text-gray-900;
 }
 
 .light-theme h1,
 .light-theme h2,
-.light-theme h3 {
+.light-theme h3,
+.light-theme h4 {
   @apply text-gray-900;
 }
 
 .light-theme p,
 .light-theme li,
-.light-theme span {
-  @apply text-gray-800;
+.light-theme span,
+.light-theme div {
+  @apply text-gray-700;
+}
+
+/* Light theme card backgrounds */
+.light-theme .bg-gray-800,
+.light-theme .bg-gray-900,
+.light-theme [class*="bg-gray-8"],
+.light-theme [class*="bg-gray-9"],
+.light-theme [class*="from-gray-8"],
+.light-theme [class*="via-gray-8"],
+.light-theme [class*="to-gray-9"] {
+  @apply !bg-white;
+}
+
+/* Light theme borders */
+.light-theme [class*="border-gray-7"] {
+  @apply !border-gray-200;
+}
+
+/* Light theme text colors */
+.light-theme .text-gray-300,
+.light-theme .text-gray-400 {
+  @apply !text-gray-700;
+}
+
+.light-theme .text-white {
+  @apply !text-gray-900;
+}
+
+/* Preserve yellow colors in light theme */
+.light-theme .text-yellow-400,
+.light-theme .text-yellow-500 {
+  @apply !text-yellow-600;
+}
+
+/* Light theme backgrounds for cards */
+.light-theme [class*="bg-gray-800/"] {
+  @apply !bg-white !border-gray-200;
 }
 
 section {
   @apply py-16;
+}
+
+/* Premium Custom Scrollbar - Dark */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 10px;
+}
+
+.light-theme::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #eab308, #ca8a04);
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+}
+
+.light-theme::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #eab308, #ca8a04);
+  border-radius: 10px;
+  border: 2px solid #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fbbf24, #eab308);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: #eab308;
+  color: #000;
 }

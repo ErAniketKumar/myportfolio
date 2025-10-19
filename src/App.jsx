@@ -1,27 +1,60 @@
-import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Skill from './components/Skill';
-import Contact from './components/Contact';
+import React, { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import AboutPage from "./components/AboutPage";
+import Projects from "./components/Projects";
+import ProjectDetail from "./components/ProjectDetail";
+import Skill from "./components/Skill";
+import Contact from "./components/Contact";
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState("dark");
+  const location = useLocation();
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
+  // Check if we're on the AboutPage route
+  const isAboutPage = location.pathname === "/about";
+
   return (
-    <div className={theme === 'dark' ? 'dark' : 'light-theme'}>
+    <div className={theme === "dark" ? "dark" : "light-theme"}>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
-        <section id="Home"><Home /></section>
-        <section id="About"><About /></section>
-        <section id="Portfolio"><Portfolio /></section>
-        <section id="Skills"><Skill /></section>
-        <section id="ContactUs"><Contact /></section>
+        <Routes>
+          {/* Separate About Page Route */}
+          <Route path="/about" element={<AboutPage />} />
+
+          {/* Project Detail Route */}
+          <Route path="/project/:id" element={<ProjectDetail />} />
+
+          {/* Main Single Page Application */}
+          <Route
+            path="/"
+            element={
+              <>
+                <section id="Home">
+                  <Home />
+                </section>
+                <section id="About">
+                  <About />
+                </section>
+                <section id="Projects">
+                  <Projects />
+                </section>
+                <section id="Skills">
+                  <Skill />
+                </section>
+                <section id="ContactUs">
+                  <Contact />
+                </section>
+              </>
+            }
+          />
+        </Routes>
       </main>
     </div>
   );
