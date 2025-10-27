@@ -93,7 +93,7 @@ function Contact() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full box-border">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -121,7 +121,7 @@ function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="lg:col-span-2 space-y-8"
+          className="lg:col-span-2 space-y-8 max-w-full box-border"
         >
           {/* Contact Cards */}
           <div className="space-y-4">
@@ -218,9 +218,9 @@ function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="lg:col-span-3"
+          className="lg:col-span-3 max-w-full box-border"
         >
-          <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black dark:from-gray-800 dark:via-gray-900 dark:to-black light-theme:bg-white p-8 md:p-10 rounded-3xl border border-gray-700 dark:border-gray-700 light-theme:border-gray-200 shadow-2xl">
+          <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-black dark:from-gray-800 dark:via-gray-900 dark:to-black light-theme:bg-white p-8 md:p-10 rounded-3xl border border-gray-700 dark:border-gray-700 light-theme:border-gray-200 shadow-2xl max-w-full box-border">
             <h3 className="text-2xl font-bold text-white dark:text-white light-theme:text-gray-900 mb-2">
               Send Me a Message
             </h3>
@@ -228,7 +228,10 @@ function Contact() {
               Fill out the form below and I'll get back to you within 24 hours.
             </p>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="space-y-6 box-border max-w-full"
+            >
               <div>
                 <label className="block text-sm font-medium text-gray-300 dark:text-gray-300 light-theme:text-gray-700 mb-2">
                   Full Name <span className="text-red-400">*</span>
@@ -236,7 +239,7 @@ function Contact() {
                 <input
                   {...register("name", { required: "Name is required" })}
                   type="text"
-                  className="w-full p-4 bg-gray-800/50 dark:bg-gray-800/50 light-theme:bg-gray-50 rounded-xl text-white dark:text-white light-theme:text-gray-900 border border-gray-700 dark:border-gray-700 light-theme:border-gray-200 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none placeholder-gray-500 dark:placeholder-gray-500 light-theme:placeholder-gray-400"
+                  className="w-full p-4 bg-gray-800/50 dark:bg-gray-800/50 light-theme:bg-gray-50 rounded-xl text-white dark:text-white light-theme:text-gray-900 border border-gray-700 dark:border-gray-700 light-theme:border-gray-200 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none placeholder-gray-500 dark:placeholder-gray-500 light-theme:placeholder-gray-400 box-border"
                   placeholder="John Doe"
                 />
                 {errors.name && (
@@ -259,7 +262,7 @@ function Contact() {
                     },
                   })}
                   type="email"
-                  className="w-full p-4 bg-gray-800/50 dark:bg-gray-800/50 light-theme:bg-gray-50 rounded-xl text-white dark:text-white light-theme:text-gray-900 border border-gray-700 dark:border-gray-700 light-theme:border-gray-200 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none placeholder-gray-500 dark:placeholder-gray-500 light-theme:placeholder-gray-400"
+                  className="w-full p-4 bg-gray-800/50 dark:bg-gray-800/50 light-theme:bg-gray-50 rounded-xl text-white dark:text-white light-theme:text-gray-900 border border-gray-700 dark:border-gray-700 light-theme:border-gray-200 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none placeholder-gray-500 dark:placeholder-gray-500 light-theme:placeholder-gray-400 box-border"
                   placeholder="john@example.com"
                 />
                 {errors.email && (
@@ -275,7 +278,7 @@ function Contact() {
                 </label>
                 <textarea
                   {...register("message", { required: "Message is required" })}
-                  className="w-full p-4 bg-gray-800/50 dark:bg-gray-800/50 light-theme:bg-gray-50 rounded-xl text-white dark:text-white light-theme:text-gray-900 border border-gray-700 dark:border-gray-700 light-theme:border-gray-200 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none placeholder-gray-500 dark:placeholder-gray-500 light-theme:placeholder-gray-400 resize-none"
+                  className="w-full p-4 bg-gray-800/50 dark:bg-gray-800/50 light-theme:bg-gray-50 rounded-xl text-white dark:text-white light-theme:text-gray-900 border border-gray-700 dark:border-gray-700 light-theme:border-gray-200 focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all outline-none placeholder-gray-500 dark:placeholder-gray-500 light-theme:placeholder-gray-400 resize-none box-border"
                   rows="6"
                   placeholder="Tell me about your project or idea..."
                 ></textarea>

@@ -7,6 +7,7 @@ import AboutPage from "./components/AboutPage";
 import Projects from "./components/Projects";
 import ProjectDetail from "./components/ProjectDetail";
 import Skill from "./components/Skill";
+import Dsa from "./components/Dsa";
 import Contact from "./components/Contact";
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
                 </section>
                 <section id="Skills">
                   <Skill />
+                </section>
+                <section id="DSA">
+                  <Dsa />
                 </section>
                 <section id="ContactUs">
                   <Contact />
