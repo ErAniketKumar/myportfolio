@@ -36,7 +36,7 @@ function Navbar({ theme, toggleTheme }) {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-lg shadow-lg border-b border-gray-800"
+      className="sticky top-0 z-40 bg-gray-900/90 backdrop-blur-lg shadow-lg border-b border-gray-800"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -112,7 +112,7 @@ function Navbar({ theme, toggleTheme }) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-gray-900/98 backdrop-blur-xl flex flex-col items-center justify-center h-screen space-y-8 text-xl font-semibold fixed inset-0"
+          className="md:hidden bg-gray-900/95 backdrop-blur-xl flex flex-col items-center justify-center min-h-screen space-y-8 text-xl font-semibold fixed inset-0 overflow-y-auto z-50"
         >
           {isAboutPage ? (
             <RouterLink

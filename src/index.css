@@ -104,6 +104,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Prevent horizontal overflow on small devices caused by fixed-width elements */
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Selection color */
 ::selection {
   background-color: #eab308;
