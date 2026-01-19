@@ -80,8 +80,8 @@ function Contact() {
       id: 2,
       icon: <FaPhone className="text-2xl" />,
       title: "Phone",
-      value: "+91-9123120581",
-      link: "tel:+919123120581",
+      value: "+91-9507152651",
+      link: "tel:+919507152651",
     },
     {
       id: 3,
